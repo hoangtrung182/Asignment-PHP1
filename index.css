@@ -1,0 +1,46 @@
+html {
+	box-sizing: border-box;
+}
+.container {
+	width: 980px;
+	max-width: 100%;
+	margin-right: auto;
+	margin-left: auto;
+	border: 2px solid #000;
+	padding: 20px;
+}
+.box {
+	border: 2px solid #000;
+	padding: 20px;
+}
+.box-info {
+	font-size: 30px;
+	text-decoration: underline;
+}
+.box-name, .box-desc {
+	font-size: 24px;
+}
+.btn {
+	display: block;
+	margin: 20px 0;
+	height: 30px;
+	width: 200px;
+	background-color: #000;
+	color: #fff;
+	border-radius: 4px;
+	font-size: 18px;
+}
+.color {
+	background-color: #6dd9c5;
+	color: #fff;
+	border: none;
+	width: 100px;
+}
+a {
+	display: block;
+	text-decoration: none;
+}
+input {
+	width: 200px;
+	height: 30px;
+}
