@@ -18,12 +18,6 @@
 					<a href="./login.php">
 						<button class="btn btn-warning">Login</button>
 					</a>
-					<!-- <a href="./QLVN/list-pet.php">
-						<button class="btn btn-warning">Quản lí vật nuôi</button>
-					</a>
-					<a href="./QLDMVN/list-category.php">
-						<button class="btn btn-warning">Quản lí loại vật nuôi</button>
-					</a> -->
 			</div>
 		</div>
 	</div>
