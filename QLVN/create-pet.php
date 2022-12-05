@@ -66,8 +66,8 @@
 		</a>
 		<h1>Form thêm vật nuôi</h1>
 		<form action="./tnyc_create.php" method="get">
-			<label for="">Mã vật nuôi</label><br>
-			<input type="number" name="id" placeholder="Ma vật nuôi" required="true" ><br><br>
+			<!-- <label for="">Mã vật nuôi</label><br> -->
+			<input type="number" name="id" placeholder="Ma vật nuôi" hidden ><br><br>
 
 			<label for="">Tên vật nuôi</label><br>
 			<input type="text" name="name" placeholder="Tên vật nuôi" required="true"><br><br>

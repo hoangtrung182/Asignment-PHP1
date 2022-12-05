@@ -33,7 +33,7 @@
 	<div class="container">
 		<table class="table">
 		  <thead>
-		    <tr>		
+		    <tr style="text-align: center;">		
 		      <th scope="col">Mã</th>
 		      <th scope="col">Tên</th>
 		      <th scope="col">Loại</th>
@@ -47,7 +47,7 @@
 		  	<?php
 		  		for($i = 0; $i < count($data); $i++) {
 		  			   ?>
-		  			<tr>
+		  			<tr style="text-align: center;">
 		  				<td><?= $data[$i]['id'] ?></td>
 		  				<td><?= $data[$i]['name'] ?></td>
 		  				<td><?= $data[$i]['type_id'] ?></td>
