@@ -76,7 +76,7 @@
 			<!-- <input type="text" name="type_id" placeholder="Loại vật nuôi"><br><br> -->
 
 			<label for="">Kiểu</label><br>
-			<select name="type_id" id="">
+			<select name="type_id" id="" style="height: 38px;width: 100px;"> 
 				<?php foreach ($data as $key => $value) { ?>
 					<option value="<?= $value['type'] ?>">
 						<?= $value['type'] ?>	
