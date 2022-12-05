@@ -1,5 +1,3 @@
-
-
 <?php 
 	// 1. Kết nối PHP vs db mySQL
 	// 1. Khởi tạo kết nối
@@ -45,8 +43,7 @@
 		  </thead>
 		  <tbody>
 		  	<?php
-		  		for($i = 0; $i < count($data); $i++) {
-		  			   ?>
+		  		for($i = 0; $i < count($data); $i++) {  ?>
 		  			<tr style="text-align: center;">
 		  				<td><?= $data[$i]['id'] ?></td>
 		  				<td><?= $data[$i]['name'] ?></td>

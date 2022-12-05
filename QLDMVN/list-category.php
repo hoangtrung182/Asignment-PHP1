@@ -1,19 +1,11 @@
-
-
-
-<?php 
-	
+<?php 	
 	include '.././QLVN/connect.php';
 
 	$sql = "SELECT * FROM typepets";
 	$statement = $connect->prepare($sql);
 	$statement->execute();
 	$data = $statement->fetchAll();
-
-	// var_dump($data);
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -91,16 +83,11 @@
 		  </thead>
 		  <tbody>
 		  	<?php
-		  		for($i = 0; $i < count($data); $i++) {
-		  			$id = $data[$i]['id'];
-		  			$type = $data[$i]['type'];
-		  			$name = $data[$i]['name'];
-		  			$url_edit = "edit_category.php?id=$id";
-		  			 ?>
+		  		for($i = 0; $i < count($data); $i++) { ?>
 		  			<tr>
-		  				<td><?= $id ?></td>
-		  				<td><?= $type ?></td>
-		  				<td><?= $name ?></td>
+		  				<td><?= $data[$i]['id'] ?></td>
+		  				<td><?= $data[$i]['type'] ?></td>
+		  				<td><?= $data[$i]['name'] ?></td>
 		  				<td>
 	  						<a href="edit_category.php?id=<?= $data[$i]['id'] ?>">
 	  							<button class="btn">Edit</button>
@@ -110,15 +97,12 @@
 	  						</a>
 		  				</td>
 		  			</tr>
-		  		<?php 
-		  		}
-		  	 ?>
+		  		<?php } ?>
 		  </tbody>
 		</table>
 		<a href="./create_category.php">
 			<button class="btn-new">ADD NEW</button>
 		</a>
 	</div>	
-
 </body>
 </html>

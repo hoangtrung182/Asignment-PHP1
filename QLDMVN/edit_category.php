@@ -1,5 +1,3 @@
-
-
 <?php
 
 	$id = isset($_GET['id']) ? $_GET['id'] : 0; 
@@ -9,9 +7,7 @@
 	$statement = $connect->prepare($sql);
 	$statement->execute();
 	$item = $statement->fetch();
-
  ?>
-
 
 
 <!DOCTYPE html>
@@ -22,7 +18,6 @@
 	<title>Form chỉnh sửa danh mục</title>
 </head>
 <body>
-
 	<form action="./tncy_edit.php" method="post">
 		<input type="text" name="id" placeholder="ID" value="<?= $item['id'] ?> " hidden><br><br>
 		<label for="">Loại vật nuôi</label>
@@ -31,6 +26,5 @@
 		<input type="text" name="name" placeholder="Name" value="<?= $item['name'] ?>"><br><br>
 		<button>UPDATE</button>
 	</form>
-	
 </body>
 </html>

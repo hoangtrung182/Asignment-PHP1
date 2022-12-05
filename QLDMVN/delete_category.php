@@ -1,7 +1,4 @@
-
-
 <?php
-
 	$id = isset($_GET['id']) ? $_GET['id'] : 0; 
 	
 	include '.././QLVN/connect.php';
@@ -9,10 +6,7 @@
 	$statement = $connect->prepare($sql);
 	$statement->execute();
 	$item = $statement->fetch();
-
  ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -22,7 +16,6 @@
 	<title>Form chỉnh sửa danh mục</title>
 </head>
 <body>
-
 	<form action="./tncy_delete.php" method="post">
 		<input type="text" name="id" placeholder="ID" value="<?= $item['id'] ?> " hidden><br><br>
 		<label for="">Loại vật nuôi</label>
@@ -31,6 +24,5 @@
 		<input type="text" name="name" placeholder="Name" value="<?= $item['name'] ?>"><br><br>
 		<button>DELETE</button>
 	</form>
-	
 </body>
 </html>

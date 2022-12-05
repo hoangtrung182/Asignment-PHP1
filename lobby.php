@@ -1,6 +1,6 @@
 <?php
-	$email = isset($_POST['email']) ? $_POST['email'] : 'My Friend';
- ?>
+	$email = isset($_POST['email']) ? $_POST['email'] : 'My friend';
+?>
 
 <!DOCTYPE html>
 <html lang="en">

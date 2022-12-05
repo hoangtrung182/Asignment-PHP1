@@ -1,4 +1,4 @@
-	<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -6,7 +6,6 @@
 	<title>Form tạo mới danh mục </title>
 </head>
 <body>
-
 	<form action="./tnyc_add.php" method="get">
 		<!-- <label for="">ID:</label> -->
 		<input type="number" name="id" placeholder="ID" hidden><br><br>
@@ -16,6 +15,5 @@
 		<input type="text" name="type" 	placeholder="Type.."><br><br>
 		<button>ADD</button>
 	</form>
-	
 </body>
 </html>

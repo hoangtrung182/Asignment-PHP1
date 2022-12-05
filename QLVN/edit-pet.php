@@ -8,17 +8,13 @@
 	$statement = $connect->prepare($sql);
 	$statement->execute();
 	$item = $statement->fetch();
-	// var_dump($item);
 
 
 	// Lay ds loai vat nuoi
-
 	$sql_loai = "SELECT * FROM typepets";
 	$statement_loai = $connect->prepare($sql_loai);
 	$statement_loai->execute();
 	$data = $statement_loai->fetchAll();
-
-
 ?>
 
 <!DOCTYPE html>
@@ -55,7 +51,8 @@
 			<input type="number" name="age" placeholder="Tuổi vật nuôi" value="<?= $item['age']?>"><br><br>
 
 			<label for="">Cân nặng</label><br>
-			<input type="number" name="weight" placeholder="Cân nặng vật nuôi" value="<?= $item['weight'] ?>"><br><br>
+			<input type="number" name="weight" placeholder="Cân nặng vật nuôi" value="<?= $item['weight'] ?>">
+			<br><br>
 			
 			<label for="">Link ảnh</label><br>
 			<input type="text" name="image" placeholder="Hình ảnh vật nuôi" value="<?= $item['image'] ?>">
