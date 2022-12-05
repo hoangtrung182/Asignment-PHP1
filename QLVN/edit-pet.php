@@ -9,6 +9,16 @@
 	$statement->execute();
 	$item = $statement->fetch();
 	// var_dump($item);
+
+
+	// Lay ds loai vat nuoi
+
+	$sql_loai = "SELECT * FROM typepets";
+	$statement_loai = $connect->prepare($sql_loai);
+	$statement_loai->execute();
+	$data = $statement_loai->fetchAll();
+
+
 ?>
 
 <!DOCTYPE html>
@@ -33,7 +43,13 @@
 			<input type="text" name="name" placeholder="Tên " value="<?= $item['name'] ?>"><br><br>
 
 			<label for="">Kiểu</label><br>
-			<input type="text" name="type_id" placeholder="Loại" value="<?= $item['type_id'] ?>"><br><br>
+			<select name="type_id" id="">
+				<?php foreach ($data as $key => $value) { ?>
+					<option value="<?= $value['type'] ?>">
+						<?= $value['type'] ?>	
+					</option>
+				<?php } ?>
+			</select><br><br>
 
 			<label for="">Tuổi</label><br>
 			<input type="number" name="age" placeholder="Tuổi vật nuôi" value="<?= $item['age']?>"><br><br>

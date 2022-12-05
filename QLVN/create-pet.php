@@ -1,3 +1,15 @@
+
+<?php 
+
+	include './connect.php';
+	$sql_loai = "SELECT * FROM typepets";
+	$statement_loai = $connect->prepare($sql_loai);
+	$statement_loai->execute();
+	$data = $statement_loai->fetchAll();
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -55,13 +67,22 @@
 		<h1>Form thêm vật nuôi</h1>
 		<form action="./tnyc_create.php" method="get">
 			<label for="">Mã vật nuôi</label><br>
-			<input type="number" name="id" placeholder="Ma vật nuôi" required="true"><br><br>
+			<input type="number" name="id" placeholder="Ma vật nuôi" required="true" ><br><br>
 
 			<label for="">Tên vật nuôi</label><br>
 			<input type="text" name="name" placeholder="Tên vật nuôi" required="true"><br><br>
 
-			<label for="">Kiểu vật nuôi</label><br>
-			<input type="text" name="type_id" placeholder="Loại vật nuôi"><br><br>
+			<!-- <label for="">Kiểu vật nuôi</label><br> -->
+			<!-- <input type="text" name="type_id" placeholder="Loại vật nuôi"><br><br> -->
+
+			<label for="">Kiểu</label><br>
+			<select name="type_id" id="">
+				<?php foreach ($data as $key => $value) { ?>
+					<option value="<?= $value['type'] ?>">
+						<?= $value['type'] ?>	
+					</option>
+				<?php } ?>
+			</select><br><br>
 
 			<label for="">Tuổi vật nuôi</label><br>
 			<input type="number" name="age" placeholder="Tuổi vật nuôi"><br><br>

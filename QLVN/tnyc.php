@@ -18,6 +18,7 @@
 	$statement = $connect->prepare($sql);
 	$statement->execute(); 
 
+	
 	header('location: list-pet.php');
 
  ?>
