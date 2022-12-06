@@ -1,3 +1,9 @@
+<?php 
+	
+	$notify = isset($_GET['notify']) ? $_GET['notify'] : '';
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,13 +19,21 @@
 			<button class="btn color">Back</button>
 		</a>
 		<h1>Form Login</h1>
-		<form action="./lobby.php" method="post">
+
+		<p><?= $notify ?></p>
+		<form action="./tnyc_login.php" method="post">
 			<label for="">Email: </label><br>
-			<input type="email" name="email" placeholder="Enter your email" required="true" class="form-input"><br>
+			<input 	type="email"
+					name="gmail" 
+					placeholder="Enter your email" 
+					class="form-input"><br>
 			<label for="">Password</label><br>
-			<input type="password" name="pwd" required="true">
+			<input type="password" name="pwd" >
 			<button class="btn btn-primary">Login</button>
 		</form>
 	</div>
 </body>
 </html> 
+
+
+
