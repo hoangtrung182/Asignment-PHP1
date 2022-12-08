@@ -1,15 +1,9 @@
 <?php
-	$gmail = isset($_GET['gmail']) ? $_GET['gmail'] : '';
+	// $gmail = isset($_GET['gmail']) ? $_GET['gmail'] : '';
 	
-	include './QLVN/connect.php';
-	$sql_info = "SELECT * FROM users WHERE gmail = '$gmail'";
-	$statement = $connect->prepare($sql_info);
-	$statement->execute();
-	$user = $statement->fetch();
-	// var_dump($user);
+	session_start();
 
-	$name = $user ? $user['name'] : 'Friend';	
-	$thong_bao = isset($_GET['notify']) ? $_GET['notify'] : '';
+
 ?>
 
 <!DOCTYPE html>
@@ -29,11 +23,11 @@
 </head>
 <body>
 	<div class="container">
-		<p><?= $thong_bao ?></p>
+		<!-- <p><?= $thong_bao ?></p> -->
 		<div class="box">
 			<div class="header-main">
 				<header>
-					<p class="box-name">Welcome!! <?= $name ?></p>
+					<p class="box-name">Welcome!!</p>
 				</header>
 				<a href="./index.php">
 					<button class="btn color">Exit</button>

@@ -7,6 +7,8 @@
 	$statement = $connect->prepare($sql); 
 	$statement->execute();
 	$data = $statement->fetchAll();
+
+	$success = isset($_GET['success']) ? $_GET['success'] : '';
 ?>
 
 <!DOCTYPE html>
@@ -29,6 +31,9 @@
 		</div>
 	</div>
 	<div class="container">
+		<div class="">
+			<?= $success ?>
+		</div>
 		<table class="table">
 		  <thead>
 		    <tr style="text-align: center;">		

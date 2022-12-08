@@ -7,6 +7,8 @@
 	$data = $statement_loai->fetchAll();
 
 
+	$err = isset($_GET['err']) ? $_GET['err'] : '';
+
 ?>
 
 <!DOCTYPE html>
@@ -64,12 +66,13 @@
 			<button class="btn color">Back</button>
 		</a>
 		<h1>Form thêm vật nuôi</h1>
+		<p><?= $err ?></p>
 		<form action="./tnyc_create.php" method="get">
 			<!-- <label for="">Mã vật nuôi</label><br> -->
 			<input type="number" name="id" placeholder="Ma vật nuôi" hidden ><br><br>
 
 			<label for="">Tên vật nuôi</label><br>
-			<input type="text" name="name" placeholder="Tên vật nuôi" required="true"><br><br>
+			<input type="text" name="name" placeholder="Tên vật nuôi"><br><br>
 
 			<!-- <label for="">Kiểu vật nuôi</label><br> -->
 			<!-- <input type="text" name="type_id" placeholder="Loại vật nuôi"><br><br> -->

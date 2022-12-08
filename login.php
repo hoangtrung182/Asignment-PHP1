@@ -1,6 +1,7 @@
 <?php 
 	
-	$notify = isset($_GET['notify']) ? $_GET['notify'] : '';
+	session_start();
+	$err = isset($_GET['err']) ? $_GET['err'] : '';
 
 ?>
 
@@ -20,7 +21,7 @@
 		</a>
 		<h1>Form Login</h1>
 
-		<p><?= $notify ?></p>
+		<p><?= $err ?></p>
 		<form action="./tnyc_login.php" method="post">
 			<label for="">Email: </label><br>
 			<input 	type="email"
@@ -28,7 +29,7 @@
 					placeholder="Enter your email" 
 					class="form-input"><br>
 			<label for="">Password</label><br>
-			<input type="password" name="pwd" >
+			<input type="text" name="password" >
 			<button class="btn btn-primary">Login</button>
 		</form>
 	</div>

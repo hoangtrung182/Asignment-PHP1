@@ -7,11 +7,31 @@
 	$weight = isset($_POST['weight']) ? $_POST['weight'] : 0;
 	$image = isset($_POST['image']) ? $_POST['image'] : 0;
 
-	include 'connect.php';
-	$sql = "UPDATE pets  SET name='$name', type_id='$type', age='$age', weight='$weight', image='$image' 
-			WHERE id=$id ";
-	$statement = $connect->prepare($sql);
-	$statement->execute(); 
+	$err = '';
+	if($name == '') {
+		$err .= 'Tên không được để rỗng';		
+	}
+	if($age == '') {
+		$err .= 'Tuổi không được để rỗng';
+	}
+	if($weight == '') {
+		$err .= 'Cân nặng không được để rỗng';
+	}
+	if($image == '') {
+		$err .= 'Hình ảnh không được để rỗng';
+	}
 
-	header('location: list-pet.php');
+	if($err != '') {
+		header("location: create-pet.php?err=$err");
+	}else {
+		include 'connect.php';	
+		$sql = "UPDATE pets  SET name='$name', type_id='$type', age='$age', weight='$weight', image='$image' 
+			WHERE id=$id ";
+		$statement = $connect->prepare($sql);
+		if($statement->execute()) {
+			$success = 'Sua thanh cong';
+			header("location: list-pet.php?success=$success");
+		}
+
+	}
  ?>

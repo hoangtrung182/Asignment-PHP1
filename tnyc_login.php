@@ -1,33 +1,46 @@
 
 <?php 
 	$gmail = $_POST['gmail'];
-	$password = $_POST['pwd'];
-
-	$notify = '';
-
-	if($gmail == '') {
-		$notify = $notify . 'Không được để Gmail trống !!';
-		echo "<br>";
-		header("location: login.php?notify=$notify");
-	}
-
-	if($password == '') 	{
-		$notify = $notify . 'Không được để Password trống !';
-		header("location: login.php?notify=$notify");
-	}
-
+	$password = $_POST['password'];
 	include './QLVN/connect.php';
 
-	if($gmail && $password) {
-		$sql = "SELECT * FROM users WHERE gmail = '$gmail' and password = '$password'";
-		$statement = $connect->prepare($sql);
-		if($statement->execute()) {
-			$notify .= 'Đăng Nhập thành công !';
-			header("location: lobby.php?gmail=$gmail&notify=$notify");
-		}else {
-			$notify .= 'Đăng nhập thất bại, Mời thử lại !!';
-			header("location: login.php?notify=$notify");
-		}
+
+	$err = '';
+
+	if($gmail == '') {
+		$err .= 'Gmail khong duoc de trong';
 	}
 
+	if($password == '') {
+		$err .= 'Password khog dc de trong';
+	}
+
+	if($err != '') {
+		header("location: login.php?err=$err");
+	}else {
+		// KHi khong co' loi nua thi ktra trong database
+		$sql = "SELECT * FROM users WHERE gmail = '$gmail'";
+		$sm = $connect->prepare($sql);
+		$sm->execute();
+		$data = $sm->fetch();
+		// echo "<pre>";
+		// var_dump($data);
+		// var_dump($gmail, $password);
+		// die;
+
+
+		if($data == false) {
+			$err .= 'Nguoi dung khong ton tai';
+			header("location: login.php?err=$err");
+		} else if (password_verify($password, $data['password']) == false) {
+			$err .= 'Password khong chinh xac';
+			header("location: login.php?err=$err");
+		} else {
+			// KHi nhap dung ca gmail va password roi`
+			session_start();
+			$_SESSION['user'] = $data;
+			header("location: lobby.php");
+		}
+	}
+ 	
 ?>
