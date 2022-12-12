@@ -90,7 +90,7 @@
 		  				<td><?= $data[$i]['name'] ?></td>
 		  				<td>
 	  						<a href="edit_category.php?id=<?= $data[$i]['id'] ?>">
-	  							<button class="btn">Edit</button>
+	  							<button class="btn" >Edit</button>
 	  						</a>
 	  						<a href="delete_category.php?id=<?= $data[$i]['id'] ?>">
 	  							<button class="btn delete">Delete</button>

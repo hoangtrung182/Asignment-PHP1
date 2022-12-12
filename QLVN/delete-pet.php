@@ -9,7 +9,6 @@
 	$statement->execute();
 
 	$mess = '';
-
 	if($statement->execute()) {
 		$mess = 'Delete Successful';
 	}else {

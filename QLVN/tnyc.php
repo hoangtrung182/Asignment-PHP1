@@ -22,15 +22,15 @@
 	}
 
 	if($err != '') {
-		header("location: create-pet.php?err=$err");
+		header("location: edit-pet.php?err=$err");
 	}else {
 		include 'connect.php';	
 		$sql = "UPDATE pets  SET name='$name', type_id='$type', age='$age', weight='$weight', image='$image' 
 			WHERE id=$id ";
 		$statement = $connect->prepare($sql);
 		if($statement->execute()) {
-			$success = 'Sua thanh cong';
-			header("location: list-pet.php?success=$success");
+			$success = 'Sua thanh cong id';
+			header("location: list-pet.php?success=$success&&id=$id");
 		}
 
 	}

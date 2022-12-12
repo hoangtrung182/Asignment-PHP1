@@ -37,9 +37,6 @@
 				<h1 class="box-inf">Xin mời chọn :</h1>
 			</div>
 			<div class="div">
-					<!-- <a href="./login.php">
-						<button class="btn btn-warning">Login</button>
-					</a> -->
 					<a href="./QLVN/list-pet.php">
 						<button class="btn btn-warning">Quản lí vật nuôi</button>
 					</a>

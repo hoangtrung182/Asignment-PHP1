@@ -9,6 +9,7 @@
 	$data = $statement->fetchAll();
 
 	$success = isset($_GET['success']) ? $_GET['success'] : '';
+	$id = isset($_GET['id']) ? $_GET['id'] : '';
 ?>
 
 <!DOCTYPE html>
@@ -32,7 +33,7 @@
 	</div>
 	<div class="container">
 		<div class="">
-			<?= $success ?>
+			<?= $success . ' ' . $id ?>
 		</div>
 		<table class="table">
 		  <thead>
@@ -60,7 +61,7 @@
 		  					<a href="edit-pet.php?id=<?= $data[$i]['id'] ?>">
 		  						<button class="btn">Edit</button>
 		  					</a>
-		  					<a href="delete-pet.php?id=<?= $data[$i]['id'] ?>">
+		  					<a href="delete-pet.php?id=<?= $data[$i]['id'] ?>" onclick="return confirm('ban co muon xoa khong?')">
 		  						<button class="btn delete">Delete</button>
 		  					</a>
 		  				</td>

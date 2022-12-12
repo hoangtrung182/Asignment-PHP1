@@ -15,6 +15,9 @@
 	$statement_loai = $connect->prepare($sql_loai);
 	$statement_loai->execute();
 	$data = $statement_loai->fetchAll();
+
+	$err = isset($_GET['err']) ? $_GET['err'] : '';
+
 ?>
 
 <!DOCTYPE html>
@@ -31,12 +34,13 @@
 			<button class="btn color">Back</button>
 		</a>
 		<h1>Form cập nhật</h1>
+		<div class=""><?= $err ?></div>
 		<form action="./tnyc.php" method="post">
 			<label for="" hidden>Mã vật nuôi</label><br>
 			<input type="number" name="id" placeholder="Mã vật nuôi" value="<?= $id ?>" hidden><br><br>
 
 			<label for="">Tên</label><br>
-			<input type="text" name="name" placeholder="Tên " value="<?= $item['name'] ?>"><br><br>
+			<input type="text" name="name" placeholder="Tên " value="<?= $item['name']  ?>"><br><br>
 
 			<label for="">Kiểu</label><br>
 			<select name="type_id" id="" style="height: 38px;width: 100px;" >

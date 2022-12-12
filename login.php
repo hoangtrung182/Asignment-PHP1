@@ -29,7 +29,7 @@
 					placeholder="Enter your email" 
 					class="form-input"><br>
 			<label for="">Password</label><br>
-			<input type="text" name="password" >
+			<input type="password" name="password" >
 			<button class="btn btn-primary">Login</button>
 		</form>
 	</div>
